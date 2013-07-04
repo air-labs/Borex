@@ -16,7 +16,13 @@ namespace Borex
             new Rate(Currencies.PLN, 11, 1)
         };
 
-        public List<Rate> Rates { get { return rates; } }
+        public IEnumerable<Rate> Rates
+        {
+            get
+            {
+                foreach (var e in rates) yield return e;
+            }
+        }
 
     }
 }
