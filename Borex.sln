@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{E71B9AF2-B81B-41FF-A845-455AEC0107EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Cartman", "ConsoleApplication1\Client.Cartman.csproj", "{E71B9AF2-B81B-41FF-A845-455AEC0107EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Borex", "Borex\Borex.csproj", "{915596BB-1CD6-42FE-B663-6874F670BBF6}"
 EndProject
