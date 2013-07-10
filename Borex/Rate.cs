@@ -11,6 +11,9 @@ namespace Borex
         public readonly Currencies Currency;
         public readonly double Cost;
         public readonly double Growth;
+
+        public double RelativeGrowth { get { return Growth / Cost; } }
+
         public Rate(Currencies currency, double cost, double growth)
         {
             Currency = currency;
