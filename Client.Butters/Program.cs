@@ -11,10 +11,10 @@ namespace Client.Butters
     {
         static void Main(string[] args)
         {
-            var account = new Account();
+            var account = new AccountSet();
             account[Currencies.USD] = 100;
             var server = new BorexServer();
-            server.Exchange(account, Currencies.USD, Currencies.EUR, 50);
+            server.Convert(account, Currencies.USD, Currencies.EUR, 50);
             foreach (Currencies e in Enum.GetValues(typeof(Currencies)))
                 Console.WriteLine("{0,-7}{1:0.00}", e, account[e]);
             Console.ReadKey();

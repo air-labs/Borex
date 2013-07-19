@@ -24,7 +24,7 @@ namespace Borex
             }
         }
 
-        public void Exchange(Account account, Currencies from, Currencies to, double amount)
+        public void Convert(AccountSet account, Currencies from, Currencies to, double amount)
         {
             if (account[from] < amount) throw new ArgumentException();
             Console.WriteLine("{0} {1} is exchanged to {2}", amount, from, to);

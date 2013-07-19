@@ -11,7 +11,7 @@ namespace Client.Stan
     {
         static void Main(string[] args)
         {
-            var account = new Account();
+            var account = new AccountSet();
             account[Currencies.USD] = account[Currencies.EUR] =
                 account[Currencies.PLN] = account[Currencies.CZK] = 100;
             var server = new BorexServer();
@@ -21,7 +21,7 @@ namespace Client.Stan
                                     .OrderBy(z => z.RelativeGrowth)
                                     .Select(z => z.Currency)
                                     .ToArray();
-            server.Exchange(account, currencies.First(), currencies.Last(), 100);
+            server.Convert(account, currencies.First(), currencies.Last(), 100);
         }
     }
 }

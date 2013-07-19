@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Borex
 {
-    public class Account
+    public class AccountSet
     {
         double[] values = new double[10];
         public double this[Currencies currency]
