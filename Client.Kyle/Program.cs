@@ -10,9 +10,9 @@ namespace Client.Kyle
     class Program
     {
 
-        public static Account CreateAccount(double usd, double eur, double pln, double czk)
+        public static AccountSet CreateAccount(double usd, double eur, double pln, double czk)
         {
-            var account = new Account();
+            var account = new AccountSet();
             account[Currencies.USD] = usd;
             account[Currencies.EUR] = eur;
             account[Currencies.PLN] = pln;
@@ -32,7 +32,7 @@ namespace Client.Kyle
                                     .Select(z => z.Currency)
                     				.GetFirstAndLast();
 
-            server.Exchange(account, currencies.Item1, currencies.Item2, 100);
+            server.Convert(account, currencies.Item1, currencies.Item2, 100);
         }
     }
 }
