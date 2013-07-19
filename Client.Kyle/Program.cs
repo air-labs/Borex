@@ -9,6 +9,17 @@ namespace Client.Kyle
 {
     class Program
     {
+
+        public static Account CreateAccount(double usd, double eur, double pln, double czk)
+        {
+            var account = new Account();
+            account[Currencies.USD] = usd;
+            account[Currencies.EUR] = eur;
+            account[Currencies.PLN] = pln;
+            account[Currencies.CZK] = czk;
+            return account;
+        }
+
         static void Main(string[] args)
         {
             var account = new AccountSet();
