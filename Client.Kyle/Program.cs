@@ -20,8 +20,9 @@ namespace Client.Kyle
                                     .Rates
                                     .OrderBy(z => -z.RelativeGrowth)
                                     .Select(z => z.Currency)
-                                    .ToArray();
-            server.Convert(account, currencies.First(), currencies.Last(), 100);
+                    				.GetFirstAndLast();
+
+            server.Exchange(account, currencies.Item1, currencies.Item2, 100);
         }
     }
 }
