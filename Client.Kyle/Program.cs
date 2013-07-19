@@ -22,9 +22,8 @@ namespace Client.Kyle
 
         static void Main(string[] args)
         {
-            var account = new AccountSet();
-            account[Currencies.USD] = account[Currencies.EUR] =
-                account[Currencies.PLN] = account[Currencies.CZK] = 100;
+            var account = CreateAccount(100, 100, 100, 100);
+
             var server = new BorexServer();
 
             var currencies = server
