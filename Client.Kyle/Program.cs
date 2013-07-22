@@ -9,19 +9,30 @@ namespace Client.Kyle
 {
     class Program
     {
-        static void Main(string[] args)
+
+        public static AccountSet CreateAccount(double usd, double eur, double pln, double czk)
         {
             var account = new AccountSet();
-            account[Currencies.USD] = account[Currencies.EUR] =
-                account[Currencies.PLN] = account[Currencies.CZK] = 100;
+            account[Currencies.USD] = usd;
+            account[Currencies.EUR] = eur;
+            account[Currencies.PLN] = pln;
+            account[Currencies.CZK] = czk;
+            return account;
+        }
+
+        static void Main(string[] args)
+        {
+            var account = CreateAccount(100, 100, 100, 100);
+
             var server = new BorexServer();
 
             var currencies = server
                                     .Rates
                                     .OrderBy(z => -z.RelativeGrowth)
                                     .Select(z => z.Currency)
-                                    .ToArray();
-            server.Convert(account, currencies.First(), currencies.Last(), 100);
+                    				.GetFirstAndLast();
+
+            server.Convert(account, currencies.Item1, currencies.Item2, 100);
         }
     }
 }
