@@ -8,6 +8,14 @@ namespace Borex
 {
     public class BorexServer
     {
+        public List<Rate> GetHistory(Currencies currency)
+        {
+            var history = new List<Rate>();
+            for (int i = 0; i < 50; i++)
+                history.Add(new Rate(currency, i, 1));
+            return history;
+        }
+
         List<Rate> rates = new List<Rate>
         {
             new Rate(Currencies.USD, 32, 2),
